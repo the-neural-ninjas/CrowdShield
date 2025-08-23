@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Eye, Map, AlertTriangle, Users, Zap, Camera, Brain, Navigation, Phone } from "lucide-react";
+import { Shield, Eye, Map, AlertTriangle, Users, Zap, Camera, Brain, Navigation, Phone, Github, Instagram, Linkedin, Copyright, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Index() {
@@ -57,16 +57,29 @@ export default function Index() {
       {/* Header */}
       <header className="border-b bg-card/90 backdrop-blur-md sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Shield className="h-8 w-8 text-primary" />
-            <span className="text-2xl font-bold">CrowdShield</span>
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F186b930a2e8840a889277bce7be5a4cf%2Fdc6640201f5d4a0f8d15d877bc8736e1?format=webp&width=800"
+                alt="Neural Ninjas"
+                className="h-10 w-10 object-contain animate-pulse"
+              />
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent animate-pulse">
+              CrowdShield
+            </span>
           </div>
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">Features</a>
-            <a href="#demo" className="text-muted-foreground hover:text-foreground transition-colors">Demo</a>
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#features" className="text-muted-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-300">Features</a>
+            <a href="#demo" className="text-muted-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-300">Working</a>
+            <a href="#footer" className="text-muted-foreground hover:text-primary transition-colors font-medium hover:scale-105 transform duration-300">Contact us</a>
           </nav>
-          <Link to="/dashboard">
-            <Button>Go to Dashboard</Button>
+          <Link to="/auth">
+            <Button className="bg-gradient-to-r from-primary to-yellow-600 hover:from-primary/90 hover:to-yellow-700 shadow-lg hover:shadow-xl">
+              <Zap className="mr-2 h-4 w-4" />
+              Login
+            </Button>
           </Link>
         </div>
       </header>
@@ -75,16 +88,16 @@ export default function Index() {
       <section className="py-28 px-4 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/40"></div>
         <div className="container mx-auto text-center max-w-4xl relative z-10">
-          <Badge variant="secondary" className="mb-6 bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm border-primary/30 hover:scale-105 transition-transform">
-            <Shield className="mr-2 h-4 w-4" />
+          <Badge variant="secondary" className="mb-6 bg-gradient-to-r from-primary/20 to-accent/20 backdrop-blur-sm border-primary/30 hover:scale-105 transition-transform animate-bounce">
+            <Shield className="mr-2 h-4 w-4 animate-pulse" />
             AI for Crowd & Disaster Management
           </Badge>
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-primary via-purple-600 to-accent bg-clip-text text-transparent drop-shadow-2xl">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-primary via-purple-600 to-accent bg-clip-text text-transparent drop-shadow-2xl animate-pulse">
             CrowdShield
           </h1>
-          <div className="backdrop-blur-sm bg-card/30 rounded-2xl p-8 border border-white/20 shadow-2xl mb-10">
+          <div className="backdrop-blur-sm bg-card/30 rounded-2xl p-8 border border-white/20 shadow-2xl mb-10 hover:shadow-3xl transition-all duration-500 hover:scale-105">
             <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed font-medium">
-              AI-driven system to manage mega-gatherings like <span className="text-primary font-bold">Nashik Kumbh Mela 2027</span>.
+              AI-driven system to manage mega-gatherings like <span className="text-primary font-bold animate-pulse">Nashik Kumbh Mela 2027</span>.
               Monitor population density in real-time, predict congestion, and assist
               authorities in evacuation and safety management.
             </p>
@@ -93,10 +106,10 @@ export default function Index() {
             <Link to="/dashboard">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4 rounded-xl"
+                className="w-full sm:w-auto bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-700 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4 rounded-xl animate-pulse"
               >
-                <Zap className="mr-2 h-6 w-6" />
-                Launch Dashboard
+                <Zap className="mr-2 h-6 w-6 animate-bounce" />
+                Access Panel
               </Button>
             </Link>
             <Button
@@ -104,7 +117,7 @@ export default function Index() {
               size="lg"
               className="w-full sm:w-auto bg-gradient-to-r from-accent/10 to-orange-100/50 border-accent/50 hover:bg-gradient-to-r hover:from-accent/20 hover:to-orange-200/70 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg px-8 py-4 rounded-xl backdrop-blur-sm"
             >
-              <Camera className="mr-2 h-6 w-6" />
+              <Camera className="mr-2 h-6 w-6 animate-pulse" />
               View Demo Flow
             </Button>
           </div>
@@ -128,11 +141,12 @@ export default function Index() {
               <Card
                 key={index}
                 className="border-0 bg-card/70 backdrop-blur-md shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 hover:bg-card/80 group"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-4">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br from-muted to-muted/50 ${feature.color} group-hover:scale-110 transition-transform duration-300 shadow-md`}>
-                      <feature.icon className="h-7 w-7" />
+                    <div className={`p-3 rounded-xl bg-gradient-to-br from-muted to-muted/50 ${feature.color} group-hover:scale-110 transition-transform duration-300 shadow-md animate-pulse`}>
+                      <feature.icon className="h-7 w-7 animate-bounce" />
                     </div>
                     <CardTitle className="text-xl font-semibold group-hover:text-primary transition-colors">
                       {feature.title}
@@ -204,45 +218,69 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-28 px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/5 to-primary/10"></div>
-        <div className="container mx-auto text-center relative z-10">
-          <div className="backdrop-blur-sm bg-card/40 rounded-3xl p-12 border border-white/20 shadow-2xl max-w-4xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-              Ready to Deploy?
-            </h2>
-            <p className="text-xl text-foreground/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Experience the power of AI-driven crowd management. Start monitoring and protecting large gatherings today.
-            </p>
-            <Link to="/dashboard">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-primary via-blue-600 to-primary hover:from-primary/90 hover:via-blue-700 hover:to-primary/90 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 text-xl px-12 py-6 rounded-2xl"
-              >
-                <Shield className="mr-3 h-6 w-6" />
-                Access Control Panel
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
-      <footer className="border-t bg-gradient-to-r from-card/80 to-muted/60 backdrop-blur-md py-16 px-4 relative">
+      <footer id="footer" className="border-t bg-gradient-to-r from-card/80 to-muted/60 backdrop-blur-md py-12 px-4 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent"></div>
-        <div className="container mx-auto text-center relative z-10">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="p-2 bg-gradient-to-br from-primary to-blue-600 rounded-xl shadow-lg">
-              <Shield className="h-8 w-8 text-white" />
+        <div className="container mx-auto relative z-10 max-w-6xl">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-4">
+              <a
+                href="https://github.com/the-neural-ninjas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-3 rounded-xl bg-gradient-to-br from-slate-900 to-slate-700 hover:from-purple-600 hover:to-blue-600 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+              >
+                <Github className="h-5 w-5 text-white group-hover:rotate-12 transition-transform duration-300" />
+              </a>
+
+              <a
+                href="https://www.instagram.com/_yash_tripathi_21__?igsh=MWE1czZlaG8wc3phZQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-3 rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 hover:from-pink-400 hover:to-purple-500 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+              >
+                <Instagram className="h-5 w-5 text-white group-hover:rotate-12 transition-transform duration-300" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/yashovardhan-tripathi-05220225a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-3 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105"
+              >
+                <Linkedin className="h-5 w-5 text-white group-hover:rotate-12 transition-transform duration-300" />
+              </a>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-              CrowdShield
-            </span>
+
+            {/* Disclaimer */}
+            <div className="flex-1 max-w-2xl">
+              <p className="text-xs text-foreground/60 text-center italic">
+                "CrowdShield is a prototype designed to assist and inspire. Built to learn, improve, and deliver valuable insights."
+              </p>
+            </div>
+
+            {/* Copyright and Contact */}
+            <div className="flex flex-col items-center gap-1 text-xs">
+              <div className="flex items-center gap-2 text-foreground/70">
+                <Copyright className="h-3 w-3" />
+                <span className="font-medium bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                  Neural Ninja's
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-foreground/60">
+                <Mail className="h-3 w-3" />
+                <a
+                  href="mailto:theneuralninjas@gmail.com"
+                  className="hover:text-primary transition-colors duration-300"
+                >
+                  theneuralninjas@gmail.com
+                </a>
+              </div>
+            </div>
           </div>
-          <p className="text-lg text-foreground/70 max-w-md mx-auto">
-            AI-powered crowd and disaster management for safer gatherings
-          </p>
         </div>
       </footer>
     </div>

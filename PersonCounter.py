@@ -13,8 +13,8 @@ def entry_exit_video_processing():
     
     model = YOLO('yolov8s.pt')
     
-    input_video = 'input.mp4'
-    output_video = 'inputout.mp4'
+    input_video = 'zone4.mp4'
+    output_video = 'zone4out.mp4'
     
     if not os.path.exists(input_video):
         print(f"Error: {input_video} not found!")

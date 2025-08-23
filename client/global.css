@@ -18,7 +18,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 25% 15%;
 
-    --primary: 212 78% 36%;
+    --primary: 220 85% 45%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 94%;
@@ -35,7 +35,7 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 212 78% 36%;
+    --ring: 220 85% 45%;
 
     --radius: 0.75rem;
 
@@ -49,20 +49,22 @@
     --danger-foreground: 210 40% 98%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* CrowdShield specific colors */
+    --crowdshield-blue: 220 85% 45%;
+    --crowdshield-cyan: 180 85% 45%;
+    --crowdshield-purple: 270 85% 45%;
+    --crowdshield-green: 142 76% 36%;
+    --crowdshield-orange: 25 95% 53%;
+    --crowdshield-red: 0 84% 60%;
+    --crowdshield-gold: 45 95% 53%;
   }
 
   .dark {
@@ -75,7 +77,7 @@
     --popover: 215 28% 9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 212 95% 65%;
+    --primary: 220 95% 65%;
     --primary-foreground: 215 28% 7%;
 
     --secondary: 217 33% 17%;
@@ -92,7 +94,7 @@
 
     --border: 217 33% 17%;
     --input: 217 33% 17%;
-    --ring: 212 95% 65%;
+    --ring: 220 95% 65%;
 
     --success: 142 76% 36%;
     --success-foreground: 210 40% 98%;
@@ -102,6 +104,7 @@
 
     --danger: 0 84% 60%;
     --danger-foreground: 210 40% 98%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -110,6 +113,15 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* CrowdShield specific colors - dark mode */
+    --crowdshield-blue: 220 95% 65%;
+    --crowdshield-cyan: 180 95% 65%;
+    --crowdshield-purple: 270 95% 65%;
+    --crowdshield-green: 142 76% 36%;
+    --crowdshield-orange: 25 95% 53%;
+    --crowdshield-red: 0 84% 60%;
+    --crowdshield-gold: 45 95% 53%;
   }
 }
 
@@ -120,5 +132,216 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+  /* CrowdShield specific animations and effects */
+  .crowdshield-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--crowdshield-blue)) 0%, 
+      hsl(var(--crowdshield-cyan)) 25%, 
+      hsl(var(--crowdshield-purple)) 50%, 
+      hsl(var(--crowdshield-blue)) 75%, 
+      hsl(var(--crowdshield-cyan)) 100%);
+    background-size: 400% 400%;
+    animation: crowdshield-shift 8s ease-in-out infinite;
+  }
+
+  .crowdshield-glow {
+    box-shadow: 
+      0 0 20px hsl(var(--crowdshield-blue) / 0.3),
+      0 0 40px hsl(var(--crowdshield-cyan) / 0.2),
+      0 0 60px hsl(var(--crowdshield-purple) / 0.1);
+  }
+
+  .crowdshield-pulse {
+    animation: crowdshield-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .crowdshield-bounce {
+    animation: crowdshield-bounce 1s infinite;
+  }
+
+  .crowdshield-fade-in {
+    animation: crowdshield-fade-in 0.6s ease-out;
+  }
+
+  .crowdshield-slide-up {
+    animation: crowdshield-slide-up 0.8s ease-out;
+  }
+
+  .crowdshield-scale-in {
+    animation: crowdshield-scale-in 0.5s ease-out;
+  }
+
+  .crowdshield-rotate {
+    animation: crowdshield-rotate 3s linear infinite;
+  }
+
+  .crowdshield-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--crowdshield-blue) / 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: crowdshield-shimmer 2s infinite;
+  }
+
+  /* Hover effects */
+  .crowdshield-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .crowdshield-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+      0 20px 40px hsl(var(--crowdshield-blue) / 0.15),
+      0 10px 20px hsl(var(--crowdshield-cyan) / 0.1);
+  }
+
+  .crowdshield-card {
+    @apply bg-card/80 backdrop-blur-md border border-white/20 shadow-xl;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .crowdshield-card:hover {
+    @apply bg-card/90 shadow-2xl;
+    transform: translateY(-8px);
+    border-color: hsl(var(--crowdshield-blue) / 0.3);
+  }
+
+  /* Status indicators */
+  .status-normal {
+    @apply bg-green-500/20 border-green-500/30 text-green-600;
+  }
+
+  .status-warning {
+    @apply bg-orange-500/20 border-orange-500/30 text-orange-600;
+    animation: crowdshield-pulse 2s infinite;
+  }
+
+  .status-critical {
+    @apply bg-red-500/20 border-red-500/30 text-red-600;
+    animation: crowdshield-pulse 1s infinite;
+  }
+
+  /* Loading animations */
+  .crowdshield-loading {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .crowdshield-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--crowdshield-blue) / 0.2),
+      transparent
+    );
+    animation: crowdshield-loading 1.5s infinite;
+  }
+}
+
+@layer utilities {
+  /* Animation keyframes */
+  @keyframes crowdshield-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes crowdshield-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  @keyframes crowdshield-bounce {
+    0%, 20%, 53%, 80%, 100% { transform: translate3d(0, 0, 0); }
+    40%, 43% { transform: translate3d(0, -8px, 0); }
+    70% { transform: translate3d(0, -4px, 0); }
+    90% { transform: translate3d(0, -2px, 0); }
+  }
+
+  @keyframes crowdshield-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes crowdshield-slide-up {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes crowdshield-scale-in {
+    from { 
+      opacity: 0; 
+      transform: scale(0.9); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+  }
+
+  @keyframes crowdshield-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes crowdshield-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes crowdshield-loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* Text gradients */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, 
+      hsl(var(--crowdshield-blue)), 
+      hsl(var(--crowdshield-cyan)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, 
+      hsl(var(--crowdshield-orange)), 
+      hsl(var(--crowdshield-gold)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass morphism effects */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 }
