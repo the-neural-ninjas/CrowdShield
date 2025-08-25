@@ -411,26 +411,6 @@ graph LR
 
 ---
 
-## 🎮 Demo & Screenshots
-
-<div align="center">
-
-<!-- GitHub Stats -->
-<img width="400" src="https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9" />
-<img width="400" src="https://github-readme-streak-stats.herokuapp.com/?user=yourusername&theme=dark&hide_border=true&bg_color=0d1117&stroke=58a6ff&ring=58a6ff&fire=ffa500&currStreakLabel=58a6ff" />
-
-<!-- Activity Graph -->
-<img width="800" src="https://github-readme-activity-graph.vercel.app/graph?username=yourusername&theme=react-dark&hide_border=true&bg_color=0d1117&color=58a6ff&line=1f6feb&point=58a6ff" />
-
-### **🎬 Live Demo Video**
-
-[![CrowdShield Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://youtu.be/YOUR_VIDEO_ID)
-
-*Click to watch the full demonstration*
-
-</div>
-
----
 
 ## 🏆 **SUNHACKS 2K25 Achievement**
 
