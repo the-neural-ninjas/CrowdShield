@@ -4,7 +4,7 @@
 
 ![CrowdShield Banner](https://img.shields.io/badge/CrowdShield-AI%20Powered%20Crowd%20Management-blue?style=for-the-badge&logo=shield-check&logoColor=white)
 
-**🏆 #6 Winner in SUNHACKS 2K25 🏆**
+**🏆 #5 Winner in SUNHACKS 2K25 🏆**
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![React](https://img.shields.io/badge/React-18+-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
@@ -488,7 +488,3 @@ For support and questions:
 ---
 
 **Made with ❤️ for better crowd management** 
-
-[⬆️ Back to Top](#-crowdshield---ai-powered-crowd-management-system)
-
-</div> 
