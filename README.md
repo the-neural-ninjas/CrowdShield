@@ -16,9 +16,6 @@
   <img src="https://img.shields.io/badge/YOLO-v8-00FFFF.svg?style=for-the-badge&logo=yolo&logoColor=black" alt="YOLO"/>
 </p>
 
-<!-- Animated Stats -->
-<img src="https://github-readme-stats.vercel.app/api?username=yourusername&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" />
-
 *A comprehensive crowd management and monitoring system with real-time AI person counting, live webcam streaming, and intelligent alert systems.*
 
 [📱 Features](#-features) • [🛠️ Tech Stack](#️-technology-stack) • [📁 Project Structure](#-project-structure) • [🔧 Setup](#-setup)
@@ -40,11 +37,6 @@
 | Multi-zone tracking | Predictive analytics | Emergency protocols | Role-based access |
 
 </div>
-
-### 🎯 **Core Capabilities**
-
-<!-- Animated Typing Effect for Features -->
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2000&pause=500&color=00D9FF&multiline=true&width=800&lines=🎥+Live+Webcam+Streaming+-+Real-time+camera+feeds+with+AI+person+counting;🧠+AI+Person+Detection+-+YOLO-powered+real-time+person+counting;📊+Interactive+Heatmaps+-+Visual+crowd+density+mapping+with+Mapbox;🔔+Smart+Alert+System+-+Automated+email+notifications+and+multilingual+alerts;👤+User+Authentication+-+Secure+login+with+OTP+verification;💾+Database+Integration+-+MongoDB+for+persistent+data+storage;📱+Responsive+UI+-+Modern%2C+mobile-friendly+interface" alt="Features" />
 
 ---
 
