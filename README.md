@@ -1,4 +1,3 @@
-# 🛡️ CrowdShield - AI-Powered Crowd Management System
 
 <div align="center">
 
