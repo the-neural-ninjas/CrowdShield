@@ -239,7 +239,7 @@ export default function Dashboard() {
       lastUpdate: "Live",
       crowdCount: 9240,
       videoFile: "/zone1.mp4",
-      baseUrl: "http://20.20.8.91:8080/",
+      baseUrl: "http://10.110.174.215:8080/",
       isLiveStream: true
     },
     {

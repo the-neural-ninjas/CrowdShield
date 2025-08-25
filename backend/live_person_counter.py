@@ -11,7 +11,7 @@ import time
 from typing import Dict, Any, Optional
 
 class LivePersonCounter:
-    def __init__(self, stream_url: str = "http://20.20.8.91:8080/video"):
+    def __init__(self, stream_url: str = "http://10.110.174.215:8080/video"):
         """
         Initialize the live person counter with a stream URL
         
@@ -106,7 +106,7 @@ class LivePersonCounter:
                     return file.read().split('\n')
             else:
                 # Default COCO classes (person is index 0)
-                return ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat']
+                return ['person']
         except Exception as e:
             print(f"Warning: Could not load class names: {e}")
             return ['person']
@@ -362,7 +362,7 @@ def test_live_person_counter():
     print("🧪 Testing Live Person Counter")
     
     # Create counter instance
-    counter = LivePersonCounter("http://20.20.8.91:8080/video")
+    counter = LivePersonCounter("http://10.110.174.215:8080/video")
     
     try:
         # Start counting
@@ -370,8 +370,8 @@ def test_live_person_counter():
             print("✅ Counter started successfully")
             
             # Run for 30 seconds
-            print("Running for 30 seconds...")
-            time.sleep(30)
+            print("Running for 150 seconds...")
+            time.sleep(150)
             
             # Get final counts
             counts = counter.get_counts()

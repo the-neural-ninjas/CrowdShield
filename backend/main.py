@@ -62,10 +62,30 @@ otp_collection = database.get_collection("otps")
 # Create indexes for data integrity
 async def create_indexes():
     try:
+        # Clean up any documents with null employeeId to avoid unique index conflicts
+        await users_collection.update_many(
+            {"employeeId": None}, 
+            {"$unset": {"employeeId": ""}}
+        )
+        
+        # Drop existing indexes to avoid conflicts
+        try:
+            await users_collection.drop_index("email_1")
+        except Exception:
+            pass
+        try:
+            await users_collection.drop_index("employeeId_1")
+        except Exception:
+            pass
+            
         # Unique index on email to prevent duplicates
         await users_collection.create_index("email", unique=True)
-        # Index on employeeId to prevent duplicates
-        await users_collection.create_index("employeeId", unique=True)
+        # Index on employeeId to prevent duplicates (only for non-null values)
+        await users_collection.create_index(
+            "employeeId", 
+            unique=True,
+            partialFilterExpression={"employeeId": {"$exists": True, "$ne": None}}
+        )
         # TTL index on OTP expiration
         await otp_collection.create_index("expires_at", expireAfterSeconds=0)
         # Index on OTP email for faster lookups
@@ -422,10 +442,10 @@ async def get_current_user_info(current_user: dict = Depends(get_current_user)):
 async def get_all_user_emails():
     """Get all verified user emails for alert notifications"""
     try:
-        # Get all verified users' emails
+        # Get all verified users' emails - explicitly exclude _id field
         users = await users_collection.find(
             {"is_verified": True}, 
-            {"email": 1, "name": 1, "employeeId": 1}
+            {"_id": 0, "email": 1, "name": 1, "employeeId": 1}
         ).to_list(length=None)
         
         emails = [
@@ -443,16 +463,17 @@ async def get_all_user_emails():
             "users": emails
         }
     except Exception as e:
+        print(f"Error in get_all_user_emails: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Failed to fetch user emails: {str(e)}")
 
 @app.post("/api/send-alert-to-all-users")
 async def send_alert_to_all_users(alert_data: dict):
     """Send alert email to all verified users in the database"""
     try:
-        # Get all verified user emails
+        # Get all verified user emails - explicitly exclude _id field
         users = await users_collection.find(
             {"is_verified": True}, 
-            {"email": 1, "name": 1, "employeeId": 1}
+            {"_id": 0, "email": 1, "name": 1, "employeeId": 1}
         ).to_list(length=None)
         
         if not users:

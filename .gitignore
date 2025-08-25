@@ -1,23 +1,22 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# 🛡️ CrowdShield Project - Git Ignore File
 
-# Dependencies
-node_modules
-dist
-dist-ssr
-*.local
-
-# Python
+# ===========================================
+# 🐍 Python Backend
+# ===========================================
+# Python cache files
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
+
+# Python virtual environment
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python distribution / packaging
 .Python
 build/
 develop-eggs/
@@ -36,12 +35,43 @@ wheels/
 *.egg
 MANIFEST
 
-# Virtual environments
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
+# Python testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Python IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===========================================
+# 🎨 React Frontend (Client)
+# ===========================================
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Production builds
+dist/
+build/
+.next/
+out/
 
 # Environment variables
 .env
@@ -50,7 +80,21 @@ venv.bak/
 .env.test.local
 .env.production.local
 
-# Large video files (you may want to remove this if you need to track videos)
+# Frontend cache
+.cache/
+.parcel-cache/
+
+# ===========================================
+# 🗄️ Database & Data Files
+# ===========================================
+# MongoDB data
+*.db
+*.sqlite
+*.sqlite3
+data/
+mongodb/
+
+# Large media files (should be stored elsewhere)
 *.mp4
 *.avi
 *.mov
@@ -58,31 +102,287 @@ venv.bak/
 *.wmv
 *.flv
 *.webm
+*.m4v
+*.3gp
 
-# Model files (large ML models)
+# Image files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.svg
+*.ico
+
+# Audio files
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+*.wma
+
+# ===========================================
+# 🚀 Deployment & Build Files
+# ===========================================
+# Build outputs
+.builder/
+.netlify/
+dist/
+build/
+
+# Deployment scripts (keep deploy.py but ignore generated files)
+*.bat
+*.exe
+*.msi
+
+# ===========================================
+# 🔐 Security & Configuration
+# ===========================================
+# Environment files
+.env*
+!.env.example
+
+# API keys and secrets
+secrets.json
+config.json
+credentials.json
+*.key
+*.pem
+*.p12
+*.pfx
+
+# JWT secrets
+jwt_secret.txt
+secret_key.txt
+
+# ===========================================
+# 🧠 AI/ML Models & Data
+# ===========================================
+# YOLO model files (too large for Git)
 *.pt
 *.pth
-*.h5
-*.pb
 *.onnx
+*.tflite
+*.pb
+*.h5
+*.hdf5
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Training data
+datasets/
+models/
+weights/
+checkpoints/
+
+# ===========================================
+# 🖥️ System Files
+# ===========================================
+# macOS
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
-# Build and deployment
-.config/
-.builder/
-netlify/
-
-# OS generated files
+# Windows
 Thumbs.db
+Thumbs.db:encryptable
 ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
 Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===========================================
+# 📝 Editor & IDE Files
+# ===========================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ===========================================
+# 📦 Package Manager Files
+# ===========================================
+# npm
+package-lock.json
+npm-shrinkwrap.json
+
+# yarn
+yarn.lock
+.yarn-integrity
+
+# pnpm
+pnpm-lock.yaml
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ===========================================
+# 🧪 Testing & Quality
+# ===========================================
+# Test coverage
+coverage/
+.nyc_output
+.coverage.*
+
+# Linting
+.eslintcache
+.stylelintcache
+
+# ===========================================
+# 📊 Logs & Monitoring
+# ===========================================
+# Log files
+*.log
+logs/
+log/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ===========================================
+# 🚨 Temporary & Cache Files
+# ===========================================
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+
+# Cache directories
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# ===========================================
+# 🌐 Netlify & Serverless
+# ===========================================
+# Netlify build cache
+.netlify/
+.cache/
+
+# Serverless functions
+.serverless/
+
+# ===========================================
+# 📱 Mobile & App Files
+# ===========================================
+# React Native
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# ===========================================
+# 🔍 Search & Index Files
+# ===========================================
+# Search index files
+.search-index/
+.search-index.json
+
+# ===========================================
+# 🎯 Project Specific Exclusions
+# ===========================================
+# CrowdShield specific files
+zia13148
+zone*.mp4
+
+# Large video files (should be stored in cloud storage)
+*.mp4
+*.avi
+*.mov
+
+# AI model files (too large for Git)
+*.pt
+*.pth
+
+# ===========================================
+# ✅ Keep These Files (Important)
+# ===========================================
+!README.md
+!requirements.txt
+!package.json
+!vite.config.ts
+!tailwind.config.ts
+!tsconfig.json
+!components.json
+!netlify.toml
+!.env.example
+
+# ===========================================
+# 📋 Notes
+# ===========================================
+# This .gitignore file is designed for the CrowdShield project
+# It excludes:
+# - Large media files (videos, images)
+# - AI model files (YOLO weights)
+# - Virtual environments
+# - Build outputs
+# - Cache files
+# - Environment secrets
+# - System files
+# - IDE configuration files
+
+# Keep important configuration files but exclude sensitive data
