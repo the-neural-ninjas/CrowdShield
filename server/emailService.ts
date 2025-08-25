@@ -1,6 +1,7 @@
 import * as nodemailer from 'nodemailer';
 
 // Email configuration
+
 const EMAIL_CONFIG = {
   EMAIL_ADDRESS: process.env.EMAIL_ADDRESS || 'junglicheats9631@gmail.com',
   EMAIL_PASSWORD: process.env.EMAIL_PASSWORD || 'onou aiqh weca xfkf',
