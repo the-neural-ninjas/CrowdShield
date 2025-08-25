@@ -1,10 +1,7 @@
 # 🛡️ CrowdShield - AI-Powered Crowd Management System
 
 <div align="center">
-
-<!-- Animated Banner -->
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=2196F3&center=true&vCenter=true&width=800&lines=🛡️+CrowdShield+-+AI+Crowd+Management;🎯+Real-time+Person+Detection;🚀+Winner+SUNHACKS+2K25;🧠+YOLO+Powered+Analytics" alt="CrowdShield Banner" />
-
 **🏆 #5 Winner in SUNHACKS 2K25 🏆**
 
 <!-- Animated Badges -->
